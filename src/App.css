@@ -1,0 +1,90 @@
+body,html{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-top: 50px;
+    background-color: #3fe3b1;
+
+}
+
+
+
+
+.Input{
+    display: flex;
+    gap: 10px;
+
+}
+.Input input{
+    width: 100%;
+    padding: 12px 14px;
+    font-size: 16px;
+    font-family: inherit;
+    color:  black;
+    background-color:white;
+    border: 2px solid #3fe3b1;
+    border-radius: 8px;
+    outline: none;
+    transition: all 0.3s ease;
+}
+.Input button {
+        padding: 10px 18px;
+        font-size: 16px;
+        font-weight: 600;
+        font-family: inherit;
+        border: none;
+        border-radius: 8px;
+        cursor: pointer;
+        background-color: #ed0c5c; /* Indigo */
+        color: white;
+        transition: all 0.3s ease;
+    }
+
+
+
+.Input input:hover {
+
+    background-color: #fff;
+    border-color: #4a90e2;
+    box-shadow: 0 0 6px rgba(74, 144, 226, 0.3);
+}
+
+.ul{
+
+    list-style: none; /* remove default bullets */
+    padding: 0;
+    margin-top: 10px;
+    background: #f9f9f9;
+    border: 1px solid #e5e7eb;
+    border-radius: 10px;
+    overflow: hidden;
+    max-width: 400px;
+}
+
+.ul li {
+    padding: 12px 16px;
+    font-size: 16px;
+    color: #333;
+    border-bottom: 1px solid #e5e7eb;
+    transition: background 0.3s ease, padding-left 0.3s ease;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.ul li button{
+    padding: 6px 12px;
+    font-size: 14px;
+    font-weight: 600;
+    border: none;
+    border-radius: 6px;
+    cursor: pointer;
+    background-color: #097c6a; /* Indigo */
+    color: white;
+    transition: all 0.25s ease;
+    margin: 4px;
+}
+
+.ul li button.delete {
+    background-color: red;
+}
