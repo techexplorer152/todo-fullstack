@@ -27,3 +27,12 @@ dist-ssr
 ./node_modules
 ./package-lock.json
 ./package.json
+
+# WebStorm / JetBrains
+.idea/
+*.iws
+*.iml
+*.ipr
+
+# Dependencies
+node_modules/
