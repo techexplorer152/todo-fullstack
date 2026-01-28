@@ -69,43 +69,43 @@ function App() {
 
 
     return (
-        <div>
-            <div className="Input">
-            <input
-                className="Input"
-                type="text"
-            onChange={handleChange}
-            value={words}
-            />
-            <button onClick={handleSubmit}>Add</button></div>
-            <ul className="ul">
+        <div className="app-container">
+            <h1>Task Manager</h1>
+            <div className="input-group">
+                <input
+                    type="text"
+                    placeholder="What needs to be done?"
+                    onChange={handleChange}
+                    value={words}
+                />
+                <button className="add-btn" onClick={handleSubmit}>Add Task</button>
+            </div>
+
+            <ul className="todo-list">
                 {list.map((word, index) => (
-                    <li key={word.id}>
+                    <li key={word.id} className="todo-item">
                         {editIndex === index ? (
-                            <>
+                            <div className="edit-group">
                                 <input
                                     type="text"
                                     value={editText}
                                     onChange={(e) => setEditText(e.target.value)}
                                 />
-                                <button onClick={() => handleSave(word.id)}>Save</button>
-                                <button onClick={() => setEditIndex(null)}>Cancel</button>
-                            </>
+                                <button className="save-btn" onClick={() => handleSave(word.id)}>Save</button>
+                                <button className="cancel-btn" onClick={() => setEditIndex(null)}>Cancel</button>
+                            </div>
                         ) : (
                             <>
-                                {word.task}   {/* <- use word.task now */}
-                                <div className="Buttons_li">
-                                <button onClick={() => handleEdit(index)}>Edit</button>
-                                <button className="delete" onClick={() => handleDelete(word.id)}>X</button>
+                                <span className="task-text">{word.task}</span>
+                                <div className="button-group">
+                                    <button className="edit-btn" onClick={() => handleEdit(index)}>Edit</button>
+                                    <button className="delete-btn" onClick={() => handleDelete(word.id)}>Delete</button>
                                 </div>
                             </>
                         )}
                     </li>
                 ))}
             </ul>
-
-
-
         </div>
     );
 }

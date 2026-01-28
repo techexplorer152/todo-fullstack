@@ -1,90 +1,134 @@
-body,html{
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    margin-top: 50px;
-    background-color: #3fe3b1;
+:root {
+    --primary: #6366f1;
+    --bg: #f8fafc;
+    --card-bg: #ffffff;
+    --text-main: #1e293b;
+    --text-muted: #64748b;
+    --danger: #ef4444;
+    --success: #22c55e;
+    --border: #e2e8f0;
+}
 
+body {
+    background-color: var(--bg);
+    font-family: 'Inter', -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
+    color: var(--text-main);
+    display: flex;
+    justify-content: center;
+    padding-top: 50px;
+}
+
+.app-container {
+    width: 100%;
+    max-width: 500px;
+    background: var(--card-bg);
+    padding: 2rem;
+    border-radius: 12px;
+    box-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.1);
+}
+
+h1 {
+    text-align: center;
+    margin-bottom: 1.5rem;
+    font-weight: 700;
+    color: var(--primary);
 }
 
 
-
-
-.Input{
+.input-group {
     display: flex;
     gap: 10px;
-
+    margin-bottom: 2rem;
 }
-.Input input{
-    width: 100%;
-    padding: 12px 14px;
-    font-size: 16px;
-    font-family: inherit;
-    color:  black;
-    background-color:white;
-    border: 2px solid #3fe3b1;
+
+input[type="text"] {
+    flex: 1;
+    padding: 12px 16px;
+    border: 2px solid var(--border);
     border-radius: 8px;
     outline: none;
-    transition: all 0.3s ease;
-}
-.Input button {
-        padding: 10px 18px;
-        font-size: 16px;
-        font-weight: 600;
-        font-family: inherit;
-        border: none;
-        border-radius: 8px;
-        cursor: pointer;
-        background-color: #ed0c5c; /* Indigo */
-        color: white;
-        transition: all 0.3s ease;
-    }
-
-
-
-.Input input:hover {
-
-    background-color: #fff;
-    border-color: #4a90e2;
-    box-shadow: 0 0 6px rgba(74, 144, 226, 0.3);
+    transition: border-color 0.2s;
 }
 
-.ul{
+input[type="text"]:focus {
+    border-color: var(--primary);
+}
 
-    list-style: none; /* remove default bullets */
+button {
+    cursor: pointer;
+    font-weight: 600;
+    transition: all 0.2s;
+    padding: 8px 16px;
+    border-radius: 6px;
+    border: none;
+}
+
+.add-btn {
+    background: var(--primary);
+    color: white;
+}
+
+.add-btn:hover {
+    background: #4f46e5;
+    transform: translateY(-1px);
+}
+
+.todo-list {
+    list-style: none;
     padding: 0;
-    margin-top: 10px;
-    background: #f9f9f9;
-    border: 1px solid #e5e7eb;
-    border-radius: 10px;
-    overflow: hidden;
-    max-width: 400px;
 }
 
-.ul li {
-    padding: 12px 16px;
-    font-size: 16px;
-    color: #333;
-    border-bottom: 1px solid #e5e7eb;
-    transition: background 0.3s ease, padding-left 0.3s ease;
+.todo-item {
     display: flex;
     align-items: center;
     justify-content: space-between;
+    padding: 12px;
+    border-bottom: 1px solid var(--border);
+    gap: 10px;
 }
 
-.ul li button{
-    padding: 6px 12px;
-    font-size: 14px;
-    font-weight: 600;
-    border: none;
-    border-radius: 6px;
-    cursor: pointer;
-    background-color: #097c6a; /* Indigo */
+.todo-item:last-child {
+    border-bottom: none;
+}
+
+.task-text {
+    flex: 1;
+    font-size: 1rem;
+}
+
+
+.button-group, .edit-group {
+    display: flex;
+    gap: 8px;
+}
+
+.edit-btn {
+    background: transparent;
+    color: var(--text-muted);
+    border: 1px solid var(--border);
+}
+
+.edit-btn:hover {
+    background: #f1f5f9;
+    color: var(--text-main);
+}
+
+.delete-btn {
+    background: #fee2e2;
+    color: var(--danger);
+}
+
+.delete-btn:hover {
+    background: var(--danger);
     color: white;
-    transition: all 0.25s ease;
-    margin: 4px;
 }
 
-.ul li button.delete {
-    background-color: red;
+.save-btn {
+    background: var(--success);
+    color: white;
+}
+
+.cancel-btn {
+    background: var(--text-muted);
+    color: white;
 }
